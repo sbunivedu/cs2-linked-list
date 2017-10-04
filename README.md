@@ -31,3 +31,4 @@ java LinkedListTester
 ### test and code ```addToRear```
 ### test and code ```addAfter```
 ### test and code ```removeFirst```
+### test and code ```removeLast```
