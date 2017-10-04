@@ -176,6 +176,10 @@ public class LinkedList<T>{
       result = front.getElement();
       front = rear = null;
       count = 0;
+    }else{
+      result = front.getElement();
+      front = front.getNext();
+      count--;
     }
     return result;
   }
