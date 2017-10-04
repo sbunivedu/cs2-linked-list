@@ -235,6 +235,9 @@ public class LinkedList<T>{
     }
     if(!contains(element)){
       throw new NoSuchElementException();
+    }else if(front.getElement().equals(element)){
+      // remove front node
+      return removeFirst();
     }
     return null;
   }
