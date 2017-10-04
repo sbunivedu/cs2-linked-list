@@ -225,6 +225,9 @@ public class LinkedList<T>{
   */
   public T remove (T element) throws EmptyCollectionException,
                                      NoSuchElementException{
+    if(isEmpty()){
+      throw new EmptyCollectionException("list");
+    }
     return null;
   }
 }
