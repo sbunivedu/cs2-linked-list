@@ -172,15 +172,16 @@ public class LinkedList<T>{
     if(isEmpty()){
       throw new EmptyCollectionException("list");
     }
-    if(count == 1){
-      result = front.getElement();
-      front = rear = null;
-      count = 0;
-    }else{
-      result = front.getElement();
-      front = front.getNext();
-      count--;
+
+    result = front.getElement();
+    front = front.getNext();
+    count--;
+
+    if(isEmpty()){
+      // reset rear after removing the last node
+      rear = null;
     }
+
     return result;
   }
 
