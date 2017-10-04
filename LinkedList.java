@@ -114,7 +114,17 @@ public class LinkedList<T>{
    *
    * @param element  the element to be added to the list
    */
-  public void addToRear(T element){}
+  public void addToRear(T element){
+    LinearNode<T> node = new LinearNode<T>(element);
+    // modify both front and rear when appending to an empty list
+    if (isEmpty()){
+      front = rear = node;
+    }else{
+      rear.setNext(node);
+      rear = node;
+    }
+    count++;
+  }
 
   /**
    * Adds the specified element after the specified target element.
