@@ -228,6 +228,11 @@ public class LinkedList<T>{
     if(isEmpty()){
       throw new EmptyCollectionException("list");
     }
+    if(count == 1 &&
+       front.getElement().equals(element)){
+      // remove only node
+      return removeFirst();
+    }
     return null;
   }
 }
