@@ -63,5 +63,18 @@ public class LinkedListTester{
     }catch(NoSuchElementException e){
       System.out.println("got:\t "+e.toString());
     }
+
+    System.out.println("test case: add to nowhere");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    list.addToRear("B");
+    try{
+      System.out.println("expect:\t NoSuchElementException");
+      list.addAfter("C", "D");
+    }catch(NoSuchElementException e){
+      System.out.println("got:\t "+e.toString());
+    }
+    System.out.println("expect:\t AB");
+    System.out.println("got:\t "+list);
   }
 }

@@ -143,11 +143,16 @@ public class LinkedList<T>{
           !trav.getElement().equals(target)){
       trav = trav.getNext();
     }
-    // assume target is found
-    LinearNode<T> node = new LinearNode<T>(element);
-    node.setNext(trav.getNext()); // make new node point to node after target
-    trav.setNext(node);           // make target point to new node
-    count++;
+    if(trav == null){
+      // target not found
+      throw new NoSuchElementException();
+    }else{
+      // target found
+      LinearNode<T> node = new LinearNode<T>(element);
+      node.setNext(trav.getNext()); // make new node point to node after target
+      trav.setNext(node);           // make target point to new node
+      count++;
+    }
   }
 
   /**
