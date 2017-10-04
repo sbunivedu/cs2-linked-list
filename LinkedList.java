@@ -229,33 +229,37 @@ public class LinkedList<T>{
       throw new EmptyCollectionException("list");
     }
 
+    // does it exist?
+    if(!contains(element)){
+      throw new NoSuchElementException();
+    }
+
+    // is it front node?
     if(front.getElement().equals(element)){
       // remove front node
       return removeFirst();
     }
 
-    if(!contains(element)){
-      throw new NoSuchElementException();
-    }else{
-      // invariables:
-      // 1. we will find the node
-      // 2. it must be after the front node
-      // current points the node to remove
-      // previous points to the node before it
-      LinearNode<T> previous = front;
-      LinearNode<T> current = front.getNext();
-      while(current != null &&
-            !current.getElement().equals(element)){
-        previous = current;
-        current = current.getNext();
-      }
-      previous.setNext(current.getNext());
-      if(rear == current){
-        // update rear when removing the last node
-        rear = previous;
-      }
-      count--;
-      return current.getElement();
+    // it must be in the list after the front node
+    // invariables:
+    // 1. we will find the node
+    // 2. it must be after the front node
+    // current points the node to remove
+    // previous points to the node before it
+    LinearNode<T> previous = front;
+    LinearNode<T> current = front.getNext();
+    while(current != null &&
+          !current.getElement().equals(element)){
+      previous = current;
+      current = current.getNext();
     }
+    previous.setNext(current.getNext());
+    // is it the last node?
+    if(rear == current){
+      // update rear when removing the last node
+      rear = previous;
+    }
+    count--;
+    return current.getElement();
   }
 }
