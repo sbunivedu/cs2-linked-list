@@ -142,5 +142,25 @@ public class LinkedListTester{
     }catch(EmptyCollectionException e){
       System.out.println("got:\t "+e.toString());
     }
+
+    System.out.println("test case: remove the only node");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    System.out.println("expect:\t A");
+    System.out.println("got:\t "+list.removeLast());
+    System.out.println("expect:\t 0");
+    System.out.println("got:\t "+list.size());
+    try{
+      System.out.println("expect:\t EmptyCollectionException");
+      list.first();
+    }catch(EmptyCollectionException e){
+      System.out.println("got:\t "+e.toString());
+    }
+    try{
+      System.out.println("expect:\t EmptyCollectionException");
+      list.last();
+    }catch(EmptyCollectionException e){
+      System.out.println("got:\t "+e.toString());
+    }
   }
 }

@@ -193,10 +193,17 @@ public class LinkedList<T>{
    * @throws EmptyCollectionException  if an empty collection exception occurs
    */
   public T removeLast() throws EmptyCollectionException{
+    T result = null;
+
     if(isEmpty()){
       throw new EmptyCollectionException("list");
     }
-    return null;
+    if(count == 1){
+      result = rear.getElement();
+      front = rear = null;
+      count = 0;
+    }
+    return result;
   }
 
   /**
