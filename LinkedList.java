@@ -133,7 +133,19 @@ public class LinkedList<T>{
    * @param target   the target that the element is to be added after
    * @throws NoSuchElementException if the target is not found
    */
-  public void addAfter(T target, T element) throws NoSuchElementException{}
+  public void addAfter(T target, T element) throws NoSuchElementException{
+    // find target node
+    LinearNode<T> trav = front;
+    while(trav != null &&
+          !trav.getElement().equals(target)){
+      trav = trav.getNext();
+    }
+    // assume target is found
+    LinearNode<T> node = new LinearNode<T>(element);
+    node.setNext(trav.getNext()); // make new node point to node after target
+    trav.setNext(node);           // make target point to new node
+    count++;
+  }
 
   /**
    * Removes the first element in this list and returns a reference

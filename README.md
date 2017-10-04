@@ -29,3 +29,4 @@ java LinkedListTester
 ## Steps
 ### test and code ```addToFront```
 ### test and code ```addToRear```
+### test and code ```addAfter```
