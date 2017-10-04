@@ -167,6 +167,9 @@ public class LinkedList<T>{
    * @throws EmptyCollectionException  if an empty collection exception occurs
    */
   public T removeFirst() throws EmptyCollectionException{
+    if(isEmpty()){
+      throw new EmptyCollectionException("list");
+    }
     return null;
   }
 

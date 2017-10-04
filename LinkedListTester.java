@@ -89,5 +89,15 @@ public class LinkedListTester{
     System.out.println("got:\t "+list.first());
     System.out.println("expect:\t B");
     System.out.println("got:\t "+list.last());
+
+    System.out.println("\n====test removeFirst()====");
+    System.out.println("test case: remove from empty list");
+    list = new LinkedList<String>();
+    try{
+      System.out.println("expect:\t EmptyCollectionException");
+      list.removeFirst();
+    }catch(EmptyCollectionException e){
+      System.out.println("got:\t "+e.toString());
+    }
   }
 }
