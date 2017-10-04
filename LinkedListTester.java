@@ -205,5 +205,15 @@ public class LinkedListTester{
     }catch(EmptyCollectionException e){
       System.out.println("got:\t "+e.toString());
     }
+
+    System.out.println("test case: element not found");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    try{
+      System.out.println("expect:\t NoSuchElementException");
+      list.remove("B");
+    }catch(NoSuchElementException e){
+      System.out.println("got:\t "+e.toString());
+    }
   }
 }

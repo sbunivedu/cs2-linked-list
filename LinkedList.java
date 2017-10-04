@@ -233,6 +233,9 @@ public class LinkedList<T>{
       // remove only node
       return removeFirst();
     }
+    if(!contains(element)){
+      throw new NoSuchElementException();
+    }
     return null;
   }
 }
