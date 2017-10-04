@@ -228,5 +228,24 @@ public class LinkedListTester{
     System.out.println("got:\t "+list.first());
     System.out.println("expect:\t B");
     System.out.println("got:\t "+list.last());
+
+    System.out.println("test case: remove first occurance");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    list.addToRear("B");
+    list.addToRear("C");
+    list.addToRear("A");
+    list.addToRear("B");
+    list.addToRear("C");
+    System.out.println("expect:\t C");
+    System.out.println("got:\t "+list.remove("C"));
+    System.out.println("expect:\t 5");
+    System.out.println("got:\t "+list.size());
+    System.out.println("expect:\t A");
+    System.out.println("got:\t "+list.first());
+    System.out.println("expect:\t C");
+    System.out.println("got:\t "+list.last());
+    System.out.println("expect:\t ABABC");
+    System.out.println("got:\t "+list);
   }
 }
