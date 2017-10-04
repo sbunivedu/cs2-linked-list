@@ -199,9 +199,7 @@ public class LinkedList<T>{
       throw new EmptyCollectionException("list");
     }
     if(count == 1){
-      result = rear.getElement();
-      front = rear = null;
-      count = 0;
+      return removeFirst();
     }else{
       // find second to last node
       LinearNode<T> trav = front;
