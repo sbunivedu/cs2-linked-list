@@ -20,7 +20,7 @@ public class LinkedList<T>{
    */
   public T first() throws EmptyCollectionException{
     if (front == null){
-      throw new EmptyCollectionException();
+      throw new EmptyCollectionException("list");
     }
     return front.getElement();
   }
@@ -33,7 +33,7 @@ public class LinkedList<T>{
    */
   public T last() throws EmptyCollectionException{
     if (rear == null){
-      throw new EmptyCollectionException();
+      throw new EmptyCollectionException("list");
     }
     return rear.getElement();
   }
