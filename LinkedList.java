@@ -98,7 +98,16 @@ public class LinkedList<T>{
    *
    * @param element  the element to be added to the front of the list
    */
-  public void addToFront(T element){}
+  public void addToFront(T element){
+    LinearNode<T> node = new LinearNode<T>(element);
+    node.setNext(front);
+    front = node;
+    // modify rear when adding to an empty list
+    if (isEmpty()){
+      rear = node;
+    }
+    count++;
+  }
 
   /**
    * Adds the specified element to the rear of this list.

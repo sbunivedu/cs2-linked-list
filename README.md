@@ -13,3 +13,18 @@ and ```toString```. Study those methods to understand how they work.
 We will implement the following mutator/setter methods: ```addToFront```,
 ```addToRear```, ```addAfter```, ```removeFirst```, ```removeLast```, and
 ```remove```.
+
+## Workflow
+To use [TDD](https://en.wikipedia.org/wiki/Test-driven_development) we will
+adhere to the following workflow:
+1. add a new test.
+2. compile the code base and run the tests to watch the new test fail.
+```
+javac *.java
+java LinkedListTester
+```
+3. write just enough code to make the test pass.
+4. repeat till all methods are implemented.
+
+## Steps
+### test and code ```addToFront```
