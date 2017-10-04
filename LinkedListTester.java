@@ -54,5 +54,14 @@ public class LinkedListTester{
     System.out.println("got:\t "+list.first());
     System.out.println("expect:\t C");
     System.out.println("got:\t "+list.last());
+
+    System.out.println("test case: add to empty list");
+    list = new LinkedList<String>();
+    try{
+      System.out.println("expect:\t NoSuchElementException");
+      list.addAfter("A", "B");
+    }catch(NoSuchElementException e){
+      System.out.println("got:\t "+e.toString());
+    }
   }
 }

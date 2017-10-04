@@ -134,6 +134,9 @@ public class LinkedList<T>{
    * @throws NoSuchElementException if the target is not found
    */
   public void addAfter(T target, T element) throws NoSuchElementException{
+    if(isEmpty()){
+      throw new NoSuchElementException();
+    }
     // find target node
     LinearNode<T> trav = front;
     while(trav != null &&
