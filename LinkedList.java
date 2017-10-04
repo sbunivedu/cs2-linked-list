@@ -202,6 +202,16 @@ public class LinkedList<T>{
       result = rear.getElement();
       front = rear = null;
       count = 0;
+    }else{
+      // find second to last node
+      LinearNode<T> trav = front;
+      while(trav.getNext() != rear){
+        trav = trav.getNext();
+      }
+      result = rear.getElement();
+      rear = trav;
+      trav.setNext(null);
+      count--;
     }
     return result;
   }
