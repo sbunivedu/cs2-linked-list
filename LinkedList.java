@@ -146,6 +146,9 @@ public class LinkedList<T>{
     if(trav == null){
       // target not found
       throw new NoSuchElementException();
+    }else if(trav == rear){
+      // add to rear -> update rear
+      addToRear(element);
     }else{
       // target found
       LinearNode<T> node = new LinearNode<T>(element);

@@ -76,5 +76,18 @@ public class LinkedListTester{
     }
     System.out.println("expect:\t AB");
     System.out.println("got:\t "+list);
+
+    System.out.println("test case: add to rear");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    list.addAfter("A", "B");
+    System.out.println("expect:\t AB");
+    System.out.println("got:\t "+list);
+    System.out.println("expect:\t 2");
+    System.out.println("got:\t "+list.size());
+    System.out.println("expect:\t A");
+    System.out.println("got:\t "+list.first());
+    System.out.println("expect:\t B");
+    System.out.println("got:\t "+list.last());
   }
 }
