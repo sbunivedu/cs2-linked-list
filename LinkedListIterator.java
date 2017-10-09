@@ -23,5 +23,7 @@ public class LinkedListIterator<T> implements Iterator<T>{
     return result;
   }
 
-  public void remove(){}
+  public void remove(){
+    throw new UnsupportedOperationException();
+  }
 }
