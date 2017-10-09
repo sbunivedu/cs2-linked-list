@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Iterator;
 
 public class LinkedListIterator<T> implements Iterator<T>{
@@ -14,6 +15,9 @@ public class LinkedListIterator<T> implements Iterator<T>{
   }
 
   public T next(){
+    if (!hasNext()){
+      throw new NoSuchElementException();
+    }
     T result = first.getElement();
     first = first.getNext();
     return result;

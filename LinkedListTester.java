@@ -251,7 +251,7 @@ public class LinkedListTester{
 
 //====================================================
     System.out.println("\n==test iterator()==");
-    System.out.println("test case: Iterator");
+    System.out.println("test case: Iterable.iterator()");
     list = new LinkedList<String>();
     list.addToRear("A");
     list.addToRear("B");
@@ -259,5 +259,29 @@ public class LinkedListTester{
     Iterator<String> it = list.iterator();
     System.out.println("expect:\t true");
     System.out.println("got:\t "+ (it instanceof Iterator));
+    System.out.println("expect:\t true");
+    System.out.println("got:\t "+ it.hasNext());
+    System.out.println("expect:\t A");
+    System.out.println("got:\t "+ it.next());
+    System.out.println("expect:\t B");
+    System.out.println("got:\t "+ it.next());
+    System.out.println("expect:\t C");
+    System.out.println("got:\t "+ it.next());
+
+    System.out.println("test case: Iterator.hasNext()");
+    list = new LinkedList<String>();
+    it = list.iterator();
+    System.out.println("expect:\t false");
+    System.out.println("got:\t "+ it.hasNext());
+
+    System.out.println("test case: Iterator.next()");
+    list = new LinkedList<String>();
+    it = list.iterator();
+    try{
+      System.out.println("expect:\t NoSuchElementException");
+      it.next();
+    }catch(NoSuchElementException e){
+      System.out.println("got:\t "+e.toString());
+    }
   }
 }
