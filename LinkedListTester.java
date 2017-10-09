@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Iterator;
 
 public class LinkedListTester{
   public static void main(String[] arg){
@@ -247,5 +248,16 @@ public class LinkedListTester{
     System.out.println("got:\t "+list.last());
     System.out.println("expect:\t ABABC");
     System.out.println("got:\t "+list);
+
+//====================================================
+    System.out.println("\n==test iterator()==");
+    System.out.println("test case: Iterator");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    list.addToRear("B");
+    list.addToRear("C");
+    Iterator<String> it = list.iterator();
+    System.out.println("expect:\t true");
+    System.out.println("got:\t "+ (it instanceof Iterator));
   }
 }

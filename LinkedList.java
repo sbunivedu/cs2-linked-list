@@ -1,6 +1,7 @@
 import java.util.NoSuchElementException;
+import java.util.Iterator;
 
-public class LinkedList<T>{
+public class LinkedList<T> implements Iterable<T>{
   private int count;
   private LinearNode<T> front, rear;
 
@@ -261,5 +262,9 @@ public class LinkedList<T>{
     }
     count--;
     return current.getElement();
+  }
+
+  public Iterator<T> iterator(){
+    return null;
   }
 }
