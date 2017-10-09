@@ -265,6 +265,6 @@ public class LinkedList<T> implements Iterable<T>{
   }
 
   public Iterator<T> iterator(){
-    return null;
+    return new LinkedListIterator<T>(front, count);
   }
 }
