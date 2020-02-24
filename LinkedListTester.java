@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 public class LinkedListTester{
@@ -281,6 +282,29 @@ public class LinkedListTester{
       System.out.println("expect:\t NoSuchElementException");
       it.next();
     }catch(NoSuchElementException e){
+      System.out.println("got:\t "+e.toString());
+    }
+
+    System.out.println("test case: ConcurrentModificationException");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    it = list.iterator();
+    list.removeLast();
+    try{
+      System.out.println("expect:\t ConcurrentModificationException");
+      it.hasNext();
+    }catch(ConcurrentModificationException e){
+      System.out.println("got:\t "+e.toString());
+    }
+
+    System.out.println("test case: UnsupportedOperationException");
+    list = new LinkedList<String>();
+    list.addToRear("A");
+    it = list.iterator();
+    try{
+      System.out.println("expect:\t UnsupportedOperationException");
+      it.remove();
+    }catch(UnsupportedOperationException e){
       System.out.println("got:\t "+e.toString());
     }
   }

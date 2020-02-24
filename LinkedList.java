@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 public class LinkedList<T> implements Iterable<T>{
@@ -265,6 +266,39 @@ public class LinkedList<T> implements Iterable<T>{
   }
 
   public Iterator<T> iterator(){
-    return new LinkedListIterator<T>(front, count);
+    return new LinkedListIterator();
+  }
+  
+  private class LinkedListIterator implements Iterator<T>{
+    private int iteratorModCount; // the number of elements in the EmptyCollectionException
+    private LinearNode<T> current;
+
+    public LinkedListIterator(){
+      current = front;
+      iteratorModCount = count;
+    }
+
+    public boolean hasNext() throws ConcurrentModificationException{
+      if (iteratorModCount != count){
+        throw new ConcurrentModificationException();
+      }
+      return current != null;
+    }
+
+    public T next() throws ConcurrentModificationException{
+      if (iteratorModCount != count){
+        throw new ConcurrentModificationException();
+      }
+      if (!hasNext()){
+        throw new NoSuchElementException();
+      }
+      T result = current.getElement();
+      current = current.getNext();
+      return result;
+    }
+
+    public void remove() throws UnsupportedOperationException{
+      throw new UnsupportedOperationException();
+    }
   }
 }
