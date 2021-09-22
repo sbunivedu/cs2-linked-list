@@ -90,7 +90,7 @@ public class LinkedList<T> implements Iterable<T>{
       LinearNode<T> current = front.getNext();
       prev.setNext(null);
       while(current != null){
-        LinearNode temp = current.getNext();
+        LinearNode<T> temp = current.getNext();
         current.setNext(prev);
         prev = current;
         current = temp;
