@@ -80,6 +80,26 @@ public class LinkedList<T> implements Iterable<T>{
     return count;
   }
 
+  public void reverse(){
+  	if(count < 2){
+  		return;
+    }else{
+      // make the "next" pointer point to the previous
+      // node starting from the second node till the end
+      LinearNode<T> prev = front;
+      LinearNode<T> current = front.getNext();
+      prev.setNext(null);
+      while(current != null){
+        LinearNode temp = current.getNext();
+        current.setNext(prev);
+        prev = current;
+        current = temp;
+      }
+      rear = front;
+      front = prev;
+    }
+  }
+
   /**
    * Returns a string representation of this list.
    *
@@ -268,7 +288,7 @@ public class LinkedList<T> implements Iterable<T>{
   public Iterator<T> iterator(){
     return new LinkedListIterator();
   }
-  
+
   private class LinkedListIterator implements Iterator<T>{
     private int iteratorModCount; // the number of elements in the EmptyCollectionException
     private LinearNode<T> current;

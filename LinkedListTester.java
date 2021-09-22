@@ -4,6 +4,16 @@ import java.util.Iterator;
 
 public class LinkedListTester{
   public static void main(String[] arg){
+    LinkedList<String> list = new LinkedList<String>();
+    list.addToFront("C");
+    list.addToFront("B");
+    list.addToFront("A");
+    System.out.println("before reverse:\t "+list);
+    list.reverse();
+    System.out.println("expect:\t CBA");
+    System.out.println("got:\t "+list);
+
+    /*
     System.out.println("\n====test addToFront()====");
     LinkedList<String> list = new LinkedList<String>();
     list.addToFront("C");
@@ -307,5 +317,6 @@ public class LinkedListTester{
     }catch(UnsupportedOperationException e){
       System.out.println("got:\t "+e.toString());
     }
+    */
   }
 }
