@@ -9,7 +9,7 @@ public class LinkedListTester{
     list.addToFront("B");
     list.addToFront("A");
     System.out.println("before reverse:\t "+list);
-    list.reverse();
+    list.reverse1();
     System.out.println("expect:\t CBA");
     System.out.println("got:\t "+list);
 

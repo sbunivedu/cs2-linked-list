@@ -100,6 +100,25 @@ public class LinkedList<T> implements Iterable<T>{
     }
   }
 
+  public void reverse1(){
+    if(count < 2){
+      return;
+    }else{
+      LinearNode<T> trav = front;
+      LinearNode<T> newTail = front;
+      LinearNode<T> newHead = rear;
+      while(trav != rear){
+        front = front.getNext();
+        trav.setNext(rear.getNext());
+        rear.setNext(trav);
+        trav = front;
+      }
+      rear = newTail;
+      front = newHead;
+    }
+  }
+
+
   /**
    * Returns a string representation of this list.
    *
